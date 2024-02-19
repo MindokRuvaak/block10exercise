@@ -27,9 +27,10 @@ public abstract class Polygon extends Shape {
 
     protected abstract Point[] calculateOffsetsByScale();
 
-    // TODO: 2: What design pattern does the getCorners() method
+    //  2: What design pattern does the getCorners() method
     //  make use of, when calling the abstract calculateOffsetsByScale()
     //  method internally?
+    // Deleegation?
     private List<Point> getCorners() {
         // Find the data for this particular polygon
         Point center = getCenterPoint();
