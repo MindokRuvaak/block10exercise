@@ -14,11 +14,11 @@ public class DrawPolygons extends JComponent{
 
     public DrawPolygons(){
         polygons = new ArrayList<>(10);
-        // TODO: 1b: Get rid of these constructor calls, and
+        //  1b: Get rid of these constructor calls, and
         //   replace with calls to the new factory methods.
-        polygons.add(new Square(50,50));
-        polygons.add(new Triangle(100,100));
-        polygons.add(new Rectangle(50,150));
+        polygons.add(PolygonFactory.createSquare(50,50));
+        polygons.add(PolygonFactory.createTriangle(100,100));
+        polygons.add(PolygonFactory.createRectangle(50,150));
 
     }//constructor
 
@@ -26,7 +26,7 @@ public class DrawPolygons extends JComponent{
         ticker++;
         int value = direction ? 10 : -10;
         for (oopd_gu_chalmers.polygons.polygon.Polygon p: polygons){
-            p.updateCenter(p.centerPoint.x+value, p.centerPoint.y+value);
+            p.updateCenter(p.getX()+value, p.getY()+value);
         }
         if (ticker > 10) {
             direction = !direction;
